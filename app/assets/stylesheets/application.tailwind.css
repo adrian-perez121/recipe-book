@@ -19,4 +19,12 @@
   .btn:active {
     @apply bg-slate-500
   }
+
+  .form-text-field {
+    @apply block border border-gray-300 bg-gray-200 rounded
+  }
+
+  .form-text-field:hover, .form-text-field:focus {
+    @apply bg-gray-100
+  }
 }
