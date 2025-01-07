@@ -1,6 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_many_attached :food_img
+  has_one_attached :food_img
 
-  validates :user_id, :description, presence: true
+  validates :user_id, :description, :title, presence: true
 end
