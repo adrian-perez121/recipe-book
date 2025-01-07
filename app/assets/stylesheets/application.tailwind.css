@@ -11,4 +11,12 @@
   .btn {
     @apply bg-slate-300 px-2 py-1 rounded
   }
+
+  .btn:hover, .btn:focus {
+    @apply opacity-80
+  }
+
+  .btn:active {
+    @apply bg-slate-500
+  }
 }
