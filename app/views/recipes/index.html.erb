@@ -8,7 +8,7 @@
     <div class="flex flex-col gap-2 items-center">
       <%= image_tag url_for(recipe.food_img), class: "h-40 w-40 rounded" %>
       <h2 class="font-bold"><%= recipe.title %></h2>
-      <p class="text-sm self-start"><%= recipe.description %></p>
+      <p class="text-sm self-start h-24 w-full overflow-scroll"><%= recipe.description %></p>
       <div class="flex justify-between w-full">
         <%= link_to "Edit", edit_recipe_path(recipe), class: "a"%>
 
