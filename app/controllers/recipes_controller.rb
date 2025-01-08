@@ -19,10 +19,16 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find(params[:id])
   end
 
   def update
-
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_params)
+      redirect_to recipes_path
+    else
+      render :edit, status: :unprocessable_content
+    end
   end
 
   def destroy

@@ -1,0 +1,42 @@
+<div class="flex flex-col">
+  <h1 class="text-center text-2xl font-bold">Create A New Recipe</h1>
+
+  <%= form_with model: @recipe, class: "self-center flex flex-col px-8 py-10 gap-5" do |f| %>
+    <div data-controller="photo-preview" class=" flex flex-col gap-3">
+
+      <%= image_tag(@recipe.food_img, class: " w-48 h-48 object-cover object-center rounded-xl self-center", 'data-photo-preview-target' => 'imagePreview') %>
+
+      <div class="field">
+        <%= f.label :food_img, "Do you want to change your image?" %>
+        <%= f.file_field :food_img, image:true, accept: "image/jpeg,image/png,image/jpg",
+                         'data-photo-preview-target' => "imageField",
+                         'data-action' => 'input->photo-preview#preview',
+                         class: "block" %>
+      </div>
+
+    </div>
+
+    <div class="field">
+      <% unless @recipe.errors.full_messages_for(:title).empty?%>
+        <% @recipe.errors.full_messages_for(:title).each do |msg| %>
+          <div class="text-red-700 "> <%= msg %></div>
+        <% end %>
+      <% end %>
+      <%= f.label :title, "What is the name of your dish?" %>
+      <%= f.text_field :title, class:"form-text-field"%>
+    </div>
+
+    <div class="field">
+      <% unless @recipe.errors.full_messages_for(:description).empty?%>
+        <% @recipe.errors.full_messages_for(:description).each do |msg| %>
+          <div class="text-red-700 "> <%= msg %></div>
+        <% end %>
+      <% end %>
+      <%= f.label :description, "What is so interesting about your dish?" %>
+      <%= f.text_area :description, class:"form-text-field resize-none w-full h-36"%>
+    </div>
+
+    <%= f.submit class: "btn" %>
+  <% end %>
+
+</div>
