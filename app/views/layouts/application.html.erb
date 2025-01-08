@@ -25,7 +25,8 @@
   <% else %>
   <body class="bg-slate-50 flex flex-row h-screen items-center justify-center">
   <!-- These are the login items -->
-  <div class="w-fit h-fit bg-neutral-200 px-12 py-10 rounded-xl shadow-xl">
+  <div class="w-fit h-fit bg-neutral-200 px-12 py-10 rounded-xl shadow-xl relative">
+    <div class="absolute top-3 px-2 bg-red-300 text-red-500 rounded"><%= flash[:alert] %></div>
     <%= yield %>
   </div>
   </body>
