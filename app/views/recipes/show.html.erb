@@ -2,7 +2,9 @@
 <div class="flex flex-col items-center gap-y-3">
   <%= image_tag(url_for(@recipe.food_img), class: "max-h-96 max-w-80 rounded") %>
 
-  <%= simple_format(@recipe.description, class: "px-8 py-5 border border-solid border-slate-300 rounded-xl shadow-lg") %>
+  <div class="px-8 py-5 border border-solid border-slate-300 rounded-xl shadow-lg min-w-[48rem] max-w-[60rem]">
+    <%= simple_format(@recipe.description) %>
+  </div>
 
   <div class="flex justify-around w-full">
     <%= link_to "Edit", edit_recipe_path(@recipe), class: "a" %>
