@@ -27,4 +27,8 @@
   .form-text-field:hover, .form-text-field:focus {
     @apply bg-gray-100
   }
+
+  .field {
+    @apply flex flex-col
+  }
 }
