@@ -1,11 +1,11 @@
-import { Controller } from "@hotwired/stimulus"
+import {Controller} from "@hotwired/stimulus"
 
 // Connects to data-controller="photo-preview"
 export default class extends Controller {
   static targets = ["imageField", "imagePreview"]
-  static values = { h: {type: Number, default: 50 },  w: { type:Number, default: 50}}
+  static values = {h: {type: Number, default: 50}, w: {type: Number, default: 50}}
 
-  connect () {
+  connect() {
     this.preview()
   }
 

@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RecipeBook</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+<head>
+  <title>RecipeBook</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <% if user_signed_in? %>
-    <body class="bg-slate-50 flex flex-row min-h-screen">
-          <nav class="flex flex-col bg-neutral-200 px-10 py-8 gap-y-2 min-w-48" style="height: inherit">
-            <%= link_to "Home", recipes_path, class:"a" %>
-            <%= link_to "Edit Account", edit_user_registration_path, class: "a" %>
-            <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "a" %>
-          </nav>
-          <main class="flex-grow px-10 py-8">
-            <%= yield %>
-          </main>
-    </body>
-  <% else %>
+<% if user_signed_in? %>
+  <body class="bg-slate-50 flex flex-row min-h-screen">
+  <nav class="flex flex-col bg-neutral-200 px-10 py-8 gap-y-2 min-w-48" style="height: inherit">
+    <%= link_to "Home", recipes_path, class: "a" %>
+    <%= link_to "Edit Account", edit_user_registration_path, class: "a" %>
+    <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class: "a" %>
+  </nav>
+  <main class="flex-grow px-10 py-8">
+    <%= yield %>
+  </main>
+  </body>
+<% else %>
   <body class="bg-slate-50 flex flex-row h-screen items-center justify-center">
   <!-- These are the login items -->
   <div class="w-fit h-fit bg-neutral-200 px-12 py-10 rounded-xl shadow-xl">
@@ -30,6 +30,6 @@
     <%= yield %>
   </div>
   </body>
-  <% end %>
+<% end %>
 
 </html>

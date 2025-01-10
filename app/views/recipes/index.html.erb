@@ -10,13 +10,13 @@
       <a href="<%= recipe_path(recipe) %>" class="h-32 w-full">
         <h2 class="font-bold"><%= recipe.title %></h2>
         <div class="overflow-scroll h-24">
-          <%= simple_format(recipe.description,class: "text-sm self-start w-full overflow-scroll") %>
+          <%= simple_format(recipe.description, class: "text-sm self-start w-full overflow-scroll") %>
         </div>
       </a>
-        <div class="flex justify-between w-full">
-        <%= link_to "Edit", edit_recipe_path(recipe), class: "a"%>
+      <div class="flex justify-between w-full">
+        <%= link_to "Edit", edit_recipe_path(recipe), class: "a" %>
 
-        <%= link_to "Delete" ,recipe_path(recipe), data: {turbo_method: :delete}, class: "a px-1 text-red-500 hover:text-red-500 hover:bg-red-200 rounded" %>
+        <%= link_to "Delete", recipe_path(recipe), data: { turbo_method: :delete }, class: "a px-1 text-red-500 hover:text-red-500 hover:bg-red-200 rounded" %>
       </div>
     </div>
   <% end %>

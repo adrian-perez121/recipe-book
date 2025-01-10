@@ -3,11 +3,11 @@
 
   <%= form_with model: @recipe, class: "self-center flex flex-col px-8 py-10 gap-5 min-w-[36rem] border border-slate-200 rounded-2xl shadow-xl" do |f| %>
     <div data-controller="photo-preview" class=" flex flex-col gap-3">
-        <%= image_tag('default_food_img.png', class: " w-48 h-48 object-cover object-center rounded-xl self-center", 'data-photo-preview-target' => 'imagePreview') %>
+      <%= image_tag('default_food_img.png', class: " w-48 h-48 object-cover object-center rounded-xl self-center", 'data-photo-preview-target' => 'imagePreview') %>
 
       <div class="field">
         <%= f.label :food_img, "To get rid of this dubious food, add a picture of your own food!" %>
-        <%= f.file_field :food_img, image:true, accept: "image/jpeg,image/png,image/jpg",
+        <%= f.file_field :food_img, image: true, accept: "image/jpeg,image/png,image/jpg",
                          'data-photo-preview-target' => "imageField",
                          'data-action' => 'input->photo-preview#preview',
                          class: "block" %>
@@ -16,23 +16,23 @@
     </div>
 
     <div class="field">
-      <% unless @recipe.errors.full_messages_for(:title).empty?%>
+      <% unless @recipe.errors.full_messages_for(:title).empty? %>
         <% @recipe.errors.full_messages_for(:title).each do |msg| %>
           <div class="text-red-700 "> <%= msg %></div>
         <% end %>
       <% end %>
       <%= f.label :title, "What is the name of your dish?" %>
-      <%= f.text_field :title, class:"form-text-field"%>
+      <%= f.text_field :title, class: "form-text-field" %>
     </div>
 
     <div class="field">
-      <% unless @recipe.errors.full_messages_for(:description).empty?%>
+      <% unless @recipe.errors.full_messages_for(:description).empty? %>
         <% @recipe.errors.full_messages_for(:description).each do |msg| %>
           <div class="text-red-700 "> <%= msg %></div>
         <% end %>
       <% end %>
       <%= f.label :description, "What is so interesting about your dish?" %>
-      <%= f.text_area :description, class:"form-text-field resize-none w-full h-36"%>
+      <%= f.text_area :description, class: "form-text-field resize-none w-full h-36" %>
     </div>
 
     <%= f.submit class: "btn" %>
