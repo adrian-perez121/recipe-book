@@ -24,10 +24,13 @@
   </body>
 <% else %>
   <body class="bg-slate-50 flex flex-row h-screen items-center justify-center">
-  <!-- These are the login items -->
-  <div class="w-fit h-fit bg-neutral-200 px-12 py-10 rounded-xl shadow-xl">
-    <div class="top-3 px-2 bg-red-300 text-red-500 rounded"><%= flash[:alert] %></div>
-    <%= yield %>
+  <div class="flex flex-col">
+    <h1 class="text-center text-2xl font-bold py-5">RecipeBook</h1>
+    <!-- These are the login items -->
+    <div class="w-fit h-fit bg-neutral-200 px-12 py-10 rounded-xl shadow-xl">
+      <div class="top-3 px-2 bg-red-300 text-red-500 rounded"><%= flash[:alert] %></div>
+      <%= yield %>
+    </div>
   </div>
   </body>
 <% end %>
