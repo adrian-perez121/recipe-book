@@ -11,3 +11,7 @@
   border-radius: 5px;
   box-shadow: 2px 2px 3px 1px rgba(107, 114, 128, 0.41);
 }
+
+.recipe-grid > div:hover {
+  box-shadow: 2px 2px 5px 1px rgba(107, 114, 128, 0.41);
+}
